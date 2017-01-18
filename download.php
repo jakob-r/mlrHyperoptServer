@@ -16,25 +16,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   //get the details
   $ids = $data['ids'];
   //generates helper for prepare
-  $clause = implode(', ', array_fill(0, count($ids), '?'));
-  $query = "SELECT ID, json_parconfig, json_parvals, learner_class FROM ".DB_PREFIX."parconfigs WHERE ID in (".$clause.")";
+  $query = "SELECT json_parconfig, json_parvals, learner_class FROM ".DB_PREFIX."parconfigs WHERE ID=? LIMIT 1";
+  $query2 = "UPDATE ".DB_PREFIX."parconfigs SET download_count = download_count + 1 WHERE ID=?";
   $stmt = $con->prepare($query);
-  if (false===$stmt) {
+  $stmt2 = $con->prepare($query2);
+  if (false===$stmt or false===$stmt2) {
     die('prepare() failed: ' . htmlspecialchars($con->error));
   }
-  call_user_func_array(array($stmt, 'bind_param'), $ids);
-  $stmt->execute();
   $rows = array();
-  while(($row = $stmt->fetch_array(MYSQLI_ASSOC))) {
-    $rows[] = $row;
+  foreach ($ids as $id) {
+    $stmt-> bind_param("i", $id);
+    $stmt2-> bind_param("i", $id);
+    $stmt->execute();
+    $stmt2->execute();
+    $stmt->bind_result($json_parconfig, $json_parvals, $learner_class);
+    $stmt->fetch();
+    $rows[] = array(
+      "json_parconfig" => $json_parconfig,
+      "json_parvals" => $json_parvals,
+      "learner_class" => $learner_class
+      );
   }
   $stmt->close();
+  $stmt2->close();
   $con->close();
 
   header('Content-Type: application/json');
   echo json_encode($rows);
-
 } else {
   echo("No IDs to townload recieved.");
 }
+
 ?>
