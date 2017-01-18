@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   $json_parvals_hash = md5($json_parvals);
   $learner_class = $data['learner_class'];
 
-  $query = "INSERT INTO ".DB_PREFIX."parconfigs (user_email, date, json_parconfig, json_parconfig_hash, json_parvals, json_parvals_hash, learner_class) VALUES (?,?,?,?,?,?,?)";
+  $query = "INSERT INTO ".DB_PREFIX."parconfigs (user_email, date, json_parconfig, json_parconfig_hash, json_parvals, json_parvals_hash, learner_class) VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE upload_count = upload_count + 1";
   $stmt = $con->prepare($query);
   if (false===$stmt) {
     die('prepare() failed: ' . htmlspecialchars($con->error));
