@@ -39,6 +39,9 @@ echo '<h2>Table '.DB_PREFIX.'parconfigs</h2>';
     <tr>
       <th>id</th>
       <th>learner_class</th>
+      <th>json_parconfig</th>
+      <th>json_parvals</th>
+      <th>upload_count</th>
       <th>download_count</th>
     </tr>
   </thead>
@@ -46,6 +49,9 @@ echo '<h2>Table '.DB_PREFIX.'parconfigs</h2>';
     <tr>
       <th>id</th>
       <th>learner_class</th>
+      <th>json_parconfig</th>
+      <th>json_parvals</th>
+      <th>upload_count</th>
       <th>download_count</th>
     </tr>
   </tfoot>
