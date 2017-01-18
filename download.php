@@ -14,7 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   $json_data = file_get_contents("php://input");
   $data = json_decode($json_data, true);
   //get the details
-  $ids = $data['ids'];
+  if (is_array($data['ids'])) {
+    $ids = $data['ids'];
+  } else {
+    $ids = array($data['ids']);
+  }
   //generates helper for prepare
   $query = "SELECT json_parconfig, json_parvals, learner_class FROM ".DB_PREFIX."parconfigs WHERE ID=? LIMIT 1";
   $stmt = $con->prepare($query);
