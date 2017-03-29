@@ -34,7 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $rows[] = array(
       "json_parconfig" => $json_parconfig,
       "json_parvals" => $json_parvals,
-      "learner_class" => $learner_class
+      "learner_class" => $learner_class,
+      "learner_type" => $learner_type,
+      "learner_name" => $learner_name
       );
   }
   $stmt->close();
