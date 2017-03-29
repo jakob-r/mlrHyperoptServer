@@ -14,7 +14,7 @@ mb_internal_encoding('UTF-8');
  * Array of database columns which should be read and sent back to DataTables. Use a space where
  * you want to insert a non-database field (for example a counter or static image)
  */
-$aColumns = array( 'id', 'learner_class', 'json_parconfig', 'json_parvals', 'upload_count','download_count' );
+$aColumns = array( 'id', 'learner_type', 'learner_name', 'json_parconfig', 'json_parvals', 'upload_count','download_count' );
   
 // Indexed column (used for fast and accurate table cardinality)
 $sIndexColumn = 'id';

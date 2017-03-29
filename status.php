@@ -4,7 +4,7 @@ include("conf.php");
 <!DOCTYPE html>
 <html>
 <head>
-  <title>mlrHyper Status Page</title>
+  <title>mlrHyperopt Status Page</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
@@ -38,7 +38,8 @@ echo '<h2>Table '.DB_PREFIX.'parconfigs</h2>';
   <thead>
     <tr>
       <th>id</th>
-      <th>learner_class</th>
+      <th>learner_type</th>
+      <th>learner_name</th>
       <th>json_parconfig</th>
       <th>json_parvals</th>
       <th>upload_count</th>
@@ -48,7 +49,8 @@ echo '<h2>Table '.DB_PREFIX.'parconfigs</h2>';
   <tfoot>
     <tr>
       <th>id</th>
-      <th>learner_class</th>
+      <th>learner_type</th>
+      <th>learner_name</th>
       <th>json_parconfig</th>
       <th>json_parvals</th>
       <th>upload_count</th>

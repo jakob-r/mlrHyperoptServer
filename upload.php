@@ -21,13 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   $json_parvals = $data['json_parvals'];
   $json_parvals_hash = md5($json_parvals);
   $learner_class = $data['learner_class'];
+  $learner_type = $data['learner_type'];
+  $learner_name = $data['learner_name'];
 
-  $query = "INSERT INTO ".DB_PREFIX."parconfigs (user_email, date, json_parconfig, json_parconfig_hash, json_parvals, json_parvals_hash, learner_class) VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE upload_count = upload_count + 1";
+  $query = "INSERT INTO ".DB_PREFIX."parconfigs (user_email, date, json_parconfig, json_parconfig_hash, json_parvals, json_parvals_hash, learner_class, learner_type, learner_name) VALUES (?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE upload_count = upload_count + 1";
   $stmt = $con->prepare($query);
   if (false===$stmt) {
     die('prepare() failed: ' . htmlspecialchars($con->error));
   }
-  $stmt->bind_param("sssssss", $user_email, $date, $json_parconfig, $json_parconfig_hash, $json_parvals, $json_parvals_hash, $learner_class);
+  $stmt->bind_param("sssssssss", $user_email, $date, $json_parconfig, $json_parconfig_hash, $json_parvals, $json_parvals_hash, $learner_class, $learner_type, $learner_name);
 
   $stmt->execute();
 

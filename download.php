@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $ids = array($data['ids']);
   }
   //generates helper for prepare
-  $query = "SELECT json_parconfig, json_parvals, learner_class FROM ".DB_PREFIX."parconfigs WHERE ID=? LIMIT 1";
+  $query = "SELECT json_parconfig, json_parvals, learner_class, learner_type, learner_name FROM ".DB_PREFIX."parconfigs WHERE ID=? LIMIT 1";
   $stmt = $con->prepare($query);
   if (false===$stmt) {
     die('prepare() failed: ' . htmlspecialchars($con->error));
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   foreach ($ids as $id) {
     $stmt->bind_param("i", $id);
     $stmt->execute();
-    $stmt->bind_result($json_parconfig, $json_parvals, $learner_class);
+    $stmt->bind_result($json_parconfig, $json_parvals, $learner_class, $learner_type, $learner_name);
     $stmt->fetch();
     $rows[] = array(
       "json_parconfig" => $json_parconfig,
