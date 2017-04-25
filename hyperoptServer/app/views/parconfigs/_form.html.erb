@@ -1,0 +1,72 @@
+<%= form_for(parconfig) do |f| %>
+  <% if parconfig.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parconfig.errors.count, "error") %> prohibited this parconfig from being saved:</h2>
+
+      <ul>
+      <% parconfig.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_email %>
+    <%= f.text_field :user_email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :json_parconfig %>
+    <%= f.text_area :json_parconfig %>
+  </div>
+
+  <div class="field">
+    <%= f.label :json_parvals %>
+    <%= f.text_area :json_parvals %>
+  </div>
+
+  <div class="field">
+    <%= f.label :learner_class %>
+    <%= f.text_field :learner_class %>
+  </div>
+
+  <div class="field">
+    <%= f.label :learner_type %>
+    <%= f.text_field :learner_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :learner_name %>
+    <%= f.text_field :learner_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :download_count %>
+    <%= f.number_field :download_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :upload_count %>
+    <%= f.number_field :upload_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :default %>
+    <%= f.check_box :default %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note %>
+    <%= f.text_area :note %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

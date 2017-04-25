@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_email: MyString
+  date: 2017-04-25 13:01:05
+  json_parconfig: MyText
+  json_parvals: MyText
+  learner_class: MyString
+  learner_type: MyString
+  learner_name: MyString
+  download_count: 1
+  upload_count: 1
+  default: false
+
+two:
+  user_email: MyString
+  date: 2017-04-25 13:01:05
+  json_parconfig: MyText
+  json_parvals: MyText
+  learner_class: MyString
+  learner_type: MyString
+  learner_name: MyString
+  download_count: 1
+  upload_count: 1
+  default: false

@@ -1,0 +1,2 @@
+class Parconfig < ApplicationRecord
+end

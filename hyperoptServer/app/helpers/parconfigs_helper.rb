@@ -1,0 +1,2 @@
+module ParconfigsHelper
+end

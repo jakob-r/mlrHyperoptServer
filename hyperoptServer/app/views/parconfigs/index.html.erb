@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parconfigs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>User email</th>
+      <th>Date</th>
+      <th>Json parconfig</th>
+      <th>Json parvals</th>
+      <th>Learner class</th>
+      <th>Learner type</th>
+      <th>Learner name</th>
+      <th>Download count</th>
+      <th>Upload count</th>
+      <th>Default</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parconfigs.each do |parconfig| %>
+      <tr>
+        <td><%= parconfig.id %></td>
+        <td><%= parconfig.user_email %></td>
+        <td><%= parconfig.date %></td>
+        <td><%= parconfig.json_parconfig %></td>
+        <td><%= parconfig.json_parvals %></td>
+        <td><%= parconfig.learner_class %></td>
+        <td><%= parconfig.learner_type %></td>
+        <td><%= parconfig.learner_name %></td>
+        <td><%= parconfig.download_count %></td>
+        <td><%= parconfig.upload_count %></td>
+        <td><%= parconfig.default %></td>
+        <td><%= parconfig.note %></td>
+        <td><%= link_to 'Show', parconfig %></td>
+        <td><%= link_to 'Edit', edit_parconfig_path(parconfig) %></td>
+        <td><%= link_to 'Destroy', parconfig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parconfig', new_parconfig_path %>

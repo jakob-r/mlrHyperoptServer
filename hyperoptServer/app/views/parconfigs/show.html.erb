@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @parconfig.id %>
+</p>
+
+<p>
+  <strong>User email:</strong>
+  <%= @parconfig.user_email %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @parconfig.date %>
+</p>
+
+<p>
+  <strong>Json parconfig:</strong>
+  <%= @parconfig.json_parconfig %>
+</p>
+
+<p>
+  <strong>Json parvals:</strong>
+  <%= @parconfig.json_parvals %>
+</p>
+
+<p>
+  <strong>Learner class:</strong>
+  <%= @parconfig.learner_class %>
+</p>
+
+<p>
+  <strong>Learner type:</strong>
+  <%= @parconfig.learner_type %>
+</p>
+
+<p>
+  <strong>Learner name:</strong>
+  <%= @parconfig.learner_name %>
+</p>
+
+<p>
+  <strong>Download count:</strong>
+  <%= @parconfig.download_count %>
+</p>
+
+<p>
+  <strong>Upload count:</strong>
+  <%= @parconfig.upload_count %>
+</p>
+
+<p>
+  <strong>Default:</strong>
+  <%= @parconfig.default %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @parconfig.note %>
+</p>
+
+<%= link_to 'Edit', edit_parconfig_path(@parconfig) %> |
+<%= link_to 'Back', parconfigs_path %>
