@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20170425140053) do
 
   create_table "parconfigs", force: :cascade do |t|
     t.string   "user_email",     default: "<anonymous>"
-    t.datetime "date"
     t.text     "json_parconfig"
     t.text     "json_parvals"
     t.string   "learner_class"
