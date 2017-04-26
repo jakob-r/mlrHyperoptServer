@@ -14,5 +14,6 @@ class CreateParconfigs < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    execute "ALTER TABLE parconfigs ADD UNIQUE KEY `json_par` (`json_parconfig`,`json_parvals`);"
   end
 end

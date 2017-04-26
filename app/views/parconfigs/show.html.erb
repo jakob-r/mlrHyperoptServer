@@ -6,18 +6,28 @@
 </p>
 
 <p>
+  <strong>Created at:</strong>
+  <%= @parconfig.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @parconfig.updated_at %>
+</p>
+
+<p>
   <strong>User email:</strong>
   <%= @parconfig.user_email %>
 </p>
 
 <p>
   <strong>Json parconfig:</strong>
-  <%= @parconfig.json_parconfig %>
+  <%= JSON.pretty_generate(JSON.parse(@parconfig.json_parconfig)) %>
 </p>
 
 <p>
   <strong>Json parvals:</strong>
-  <%= @parconfig.json_parvals %>
+  <%= JSON.pretty_generate(JSON.parse(@parconfig.json_parvals)) %>
 </p>
 
 <p>
