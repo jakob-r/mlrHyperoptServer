@@ -14,6 +14,7 @@ class CreateParconfigs < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    execute "ALTER TABLE parconfigs ADD UNIQUE KEY `json_par` (`json_parconfig`,`json_parvals`);"
+    execute "ALTER TABLE parconfigs ADD par_hash CHAR(32) AS (MD5(concat(json_parconfig,json_parvals))) PERSISTENT;"
+    execute "ALTER TABLE parconfigs ADD UNIQUE (par_hash);"
   end
 end
