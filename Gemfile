@@ -52,3 +52,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ## CUSTOM GEMS ###
 
 gem 'mysql2'
+gem 'figaro' #ENV Variables in config/application.yml

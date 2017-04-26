@@ -1,11 +1,11 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  database: mlrHyperopt
-  username: root
-  password: mlrmlrmlr
-  host: 127.0.0.1
-  port: 3306
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
 
 development:
   <<: *default
@@ -15,6 +15,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  database: 'db_test'
 
 production:
   <<: *default
