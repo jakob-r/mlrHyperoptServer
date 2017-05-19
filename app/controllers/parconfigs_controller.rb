@@ -78,7 +78,6 @@ class ParconfigsController < ApplicationController
       params.require(:parconfig).permit(:user_email, :json_parconfig, :json_parvals, :learner_class, :learner_type, :learner_name, :download_count, :upload_count, :default, :note)
     end
 
-  private 
     def check_logged_in
       authenticate_or_request_with_http_basic("parconfigs") do |username, password|
       username == "admin" && password == "mlrmlrmlr"
