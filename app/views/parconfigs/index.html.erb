@@ -22,9 +22,9 @@
     <% @parconfigs.each do |parconfig| %>
       <tr>
         <td><%= parconfig.id %></td>
-        <td><%= parconfig.user_email %></td>
-        <td><%= JSON.pretty_generate(JSON.parse(parconfig.json_parconfig)) %></td>
-        <td><%= JSON.pretty_generate(JSON.parse(parconfig.json_parvals)) %></td>
+        <td><%= parconfig.anon_email %></td>
+        <td><%= parconfig.pretty_parconfig %></td>
+        <td><%= parconfig.pretty_parvals %></td>
         <td><%= parconfig.learner_class %></td>
         <td><%= parconfig.learner_type %></td>
         <td><%= parconfig.learner_name %></td>

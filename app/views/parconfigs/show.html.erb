@@ -17,17 +17,17 @@
 
 <p>
   <strong>User email:</strong>
-  <%= @parconfig.user_email %>
+  <%= @parconfig.anon_email %>
 </p>
 
 <p>
   <strong>Json parconfig:</strong>
-  <%= JSON.pretty_generate(JSON.parse(@parconfig.json_parconfig)) %>
+  <%= @parconfig.pretty_parconfig %>
 </p>
 
 <p>
   <strong>Json parvals:</strong>
-  <%= JSON.pretty_generate(JSON.parse(@parconfig.json_parvals)) %>
+  <%=@parconfig.pretty_parconfig %>
 </p>
 
 <p>
