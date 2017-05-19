@@ -1,0 +1,18 @@
+<% parset.each do |param| %>
+<table>
+  <thead>
+    <tr>
+    <% param.keys.each do |key| %>
+      <th><%= key %></th>
+    <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% param.each do |parval| %>
+      <td><%= parval %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
