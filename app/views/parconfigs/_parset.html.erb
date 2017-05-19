@@ -1,9 +1,9 @@
 <% parset.each do |parids,param| %>
-<table>
+<table class="parset">
   <thead>
     <tr>
     <% param.keys.each do |key| %>
-      <th><%= key %></th>
+      <th class="parval.<%= key %>"><%= key %></th>
     <% end %>
     </tr>
   </thead>
@@ -11,7 +11,7 @@
   <tbody>
     <tr>
       <% param.each do |key,parval| %>
-      <td id="parval.<%= key %>"><%= parval %></td>
+      <td class="parval.<%= key %>"><%= parval %></td>
       <% end %>
     </tr>
   </tbody>
