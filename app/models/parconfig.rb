@@ -10,6 +10,10 @@ class Parconfig < ApplicationRecord
     JSON.pretty_generate(JSON.parse(json_parconfig))
   end
 
+  def parconfig
+    JSON.parse(json_parconfig)
+  end
+
   def pretty_parvals
     JSON.pretty_generate(JSON.parse(json_parvals))
   end
