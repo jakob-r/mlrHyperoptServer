@@ -10,8 +10,12 @@ class Parconfig < ApplicationRecord
     JSON.pretty_generate(JSON.parse(json_parconfig))
   end
 
-  def parconfig
-    JSON.parse(json_parconfig)
+  def parset
+    parset = JSON.parse(json_parconfig)
+    # Filter out defaults
+    defaults = {"tunable" => true, "allow.inf" => true, "len" => 1}
+    #...
+    return parset
   end
 
   def pretty_parvals

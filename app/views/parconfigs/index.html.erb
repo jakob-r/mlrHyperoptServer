@@ -7,7 +7,7 @@
     <tr>
       <th>id</th>
       <th>User email</th>
-      <th>Json parconfig</th>
+      <th>Parset</th>
       <th>Json parvals</th>
       <th>Learner class</th>
       <th>Learner type</th>
@@ -23,7 +23,7 @@
       <tr>
         <td><%= parconfig.id %></td>
         <td><%= parconfig.anon_email %></td>
-        <td><%= render 'parset', parset: parconfig.parconfig %></td>
+        <td><%= render 'parset', parset: parconfig.parset %></td>
         <td><%= parconfig.pretty_parvals %></td>
         <td><%= parconfig.learner_class %></td>
         <td><%= parconfig.learner_type %></td>
