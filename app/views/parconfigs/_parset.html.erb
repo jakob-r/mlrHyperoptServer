@@ -1,19 +1,24 @@
-<% parset.each do |parids,param| %>
 <table class="parset">
+  <% 
+  parset_keys = parset.map{ |key,val| val.keys }
+  common_keys = parset_keys.inject(:&)
+  all_keys = parset_keys.inject(:|)
+  individual_keys = all_keys - common_keys
+  %>
   <thead>
     <tr>
-    <% param.keys.each do |key| %>
+    <% (common_keys + individual_keys).each do |key| %>
       <th class="parval.<%= key %>"><%= key %></th>
     <% end %>
     </tr>
   </thead>
-
   <tbody>
+  <% parset.each do |parids,param| %>
     <tr>
-      <% param.each do |key,parval| %>
-      <td class="parval.<%= key %>"><%= parval %></td>
+      <% (common_keys + individual_keys).each do |key| %>
+      <td class="parval.<%= key %>"><%= param[key] unless param[key].nil? %></td>
       <% end %>
     </tr>
+  <% end %>
   </tbody>
 </table>
-<% end %>
