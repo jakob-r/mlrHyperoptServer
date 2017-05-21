@@ -16,7 +16,13 @@
   <% parset.each do |parids,param| %>
     <tr>
       <% (common_keys + individual_keys).each do |key| %>
-      <td class="parval.<%= key %>"><%= param[key] unless param[key].nil? %></td>
+	<td class="parval.<%= key %>">
+	<% unless param[key].nil? %>
+	  <% param[key].each do |val| %>
+            <%= val %>
+	  <% end %>
+	<% end %>
+	</td>
       <% end %>
     </tr>
   <% end %>
