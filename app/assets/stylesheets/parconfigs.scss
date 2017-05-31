@@ -1,3 +1,17 @@
 // Place all the styles related to the parconfigs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.parset {
+  tbody>tr>td, thead>tr>td, thead>tr>th {
+    line-height: 1;
+    padding: 2px;
+    font-weight: normal;
+  }
+  >thead {
+    background-color: #d1dadd;
+  }
+  >tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+}

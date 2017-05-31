@@ -1,6 +1,8 @@
-<table class="parset">
+<table class="table table-striped table-hover parset">
   <% 
-  parset_keys = parset.map{ |key,val| val.keys }
+  defaults = {"tunable" => [true], "allow.inf" => [false], "len" => [1]}
+  parset2 = parset.merge(parset){ |_,v,_| v.reject{ |k2,v2| (defaults.include?(k2) && defaults[k2] == v2)} }
+  parset_keys = parset2.map{ |_,val| val.keys }
   common_keys = parset_keys.inject(:&)
   all_keys = parset_keys.inject(:|)
   individual_keys = all_keys - common_keys
@@ -13,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-  <% parset.each do |parids,param| %>
+  <% parset2.each do |parids,param| %>
     <tr>
       <% (common_keys + individual_keys).each do |key| %>
 	<td class="parval.<%= key %>">

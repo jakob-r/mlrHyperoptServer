@@ -21,4 +21,8 @@ class Parconfig < ApplicationRecord
   def pretty_parvals
     JSON.pretty_generate(JSON.parse(json_parvals))
   end
+
+  def default_parvals
+    {"tunable" => true, "allow.inf" => true, "len" => 1}
+  end
 end

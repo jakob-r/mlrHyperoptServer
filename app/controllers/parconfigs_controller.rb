@@ -80,7 +80,7 @@ class ParconfigsController < ApplicationController
 
     def check_logged_in
       authenticate_or_request_with_http_basic("parconfigs") do |username, password|
-      username == "admin" && password == "mlrmlrmlr"
+      username == "admin" && password == ENV['APP_PASSWORD']
     end
   end
 end
