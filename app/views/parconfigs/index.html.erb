@@ -25,7 +25,7 @@
         <td><%= parconfig.learner_type %></td>
         <td><%= parconfig.learner_name %></td>
         <td><%= render 'parset', parset: parconfig.parset %></td>
-        <td><%= parconfig.parvals.map{|k,v| k+": "+v}.join(", ") %></td>
+        <td><%= parconfig.parvals.map{|k,v| k+": "+v.join(', ')}.join("; ") %></td>
         <td><%= parconfig.default %></td>
         <td><%= parconfig.note %></td>
         <td><%= link_to 'Show', parconfig %></td>
