@@ -20,7 +20,7 @@
       <% (common_keys + individual_keys).each do |key| %>
       	<td class="parval.<%= key %>">
       	<% unless param[key].nil? %>
-          <% if (param[key].kind_of? hash) %>
+          <% if (param[key].kind_of? Hash) %>
             <%= param[key].values.join(', ') %>
           <% else %>
             <% param[key].join(', ') %>
