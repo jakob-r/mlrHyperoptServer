@@ -22,4 +22,13 @@ class Parconfig < ApplicationRecord
   def default_parvals
     {"tunable" => true, "allow.inf" => true, "len" => 1}
   end
+
+  def learner_short
+    if (!learner_class.blank?)
+      return learner_class
+    elsif (!learner_name.blank? && !learner_type.blank?)
+      return learner_type + "." + learner_name
+    else
+      return "." + learner_name
+  end
 end
