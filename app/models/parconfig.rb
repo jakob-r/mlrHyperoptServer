@@ -1,20 +1,17 @@
 class Parconfig < ApplicationRecord
-  validates :user_email, :json_parconfig, :learner_name, presence: true
-  validates :json_parconfig, :uniqueness => { :scope => :json_parvals }
+  validates :user_email, :json_parset, :learner_name, presence: true
+  validates :json_parset, :uniqueness => { :scope => :json_parvals }
 
   def anon_email
     user_email.gsub(/(?<=@)\w*/, '*')
   end
 
-  def pretty_parconfig
-    JSON.pretty_generate(JSON.parse(json_parconfig))
+  def pretty_parset
+    JSON.pretty_generate(JSON.parse(json_parset))
   end
 
   def parset
-    parset = JSON.parse(json_parconfig)
-    # Filter out defaults
-    defaults = {"tunable" => true, "allow.inf" => true, "len" => 1}
-    #...
+    parset = JSON.parse(json_parset)
     return parset
   end
 

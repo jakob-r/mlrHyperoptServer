@@ -75,7 +75,7 @@ class ParconfigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parconfig_params
-      params.require(:parconfig).permit(:user_email, :json_parconfig, :json_parvals, :learner_class, :learner_type, :learner_name, :download_count, :upload_count, :default, :note)
+      params.require(:parconfig).permit(:user_email, :json_parset, :json_parvals, :learner_class, :learner_type, :learner_name, :download_count, :upload_count, :default, :note)
     end
 
     def check_logged_in

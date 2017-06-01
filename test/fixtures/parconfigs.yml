@@ -3,7 +3,7 @@
 one:
   user_email: MyString
   date: 2017-04-25 13:01:05
-  json_parconfig: MyText
+  json_parset: MyText
   json_parvals: MyText
   learner_class: MyString
   learner_type: MyString
@@ -15,7 +15,7 @@ one:
 two:
   user_email: MyString
   date: 2017-04-25 13:01:05
-  json_parconfig: MyText
+  json_parset: MyText
   json_parvals: MyText
   learner_class: MyString
   learner_type: MyString

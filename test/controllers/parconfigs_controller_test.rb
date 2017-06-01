@@ -17,7 +17,7 @@ class ParconfigsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create parconfig" do
     assert_difference('Parconfig.count') do
-      post parconfigs_url, params: { parconfig: { date: @parconfig.date, default: @parconfig.default, download_count: @parconfig.download_count, json_parconfig: @parconfig.json_parconfig, json_parvals: @parconfig.json_parvals, learner_class: @parconfig.learner_class, learner_name: @parconfig.learner_name, learner_type: @parconfig.learner_type, upload_count: @parconfig.upload_count, user_email: @parconfig.user_email } }
+      post parconfigs_url, params: { parconfig: { date: @parconfig.date, default: @parconfig.default, download_count: @parconfig.download_count, json_parset: @parconfig.json_parset, json_parvals: @parconfig.json_parvals, learner_class: @parconfig.learner_class, learner_name: @parconfig.learner_name, learner_type: @parconfig.learner_type, upload_count: @parconfig.upload_count, user_email: @parconfig.user_email } }
     end
 
     assert_redirected_to parconfig_url(Parconfig.last)
@@ -34,7 +34,7 @@ class ParconfigsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update parconfig" do
-    patch parconfig_url(@parconfig), params: { parconfig: { date: @parconfig.date, default: @parconfig.default, download_count: @parconfig.download_count, json_parconfig: @parconfig.json_parconfig, json_parvals: @parconfig.json_parvals, learner_class: @parconfig.learner_class, learner_name: @parconfig.learner_name, learner_type: @parconfig.learner_type, upload_count: @parconfig.upload_count, user_email: @parconfig.user_email } }
+    patch parconfig_url(@parconfig), params: { parconfig: { date: @parconfig.date, default: @parconfig.default, download_count: @parconfig.download_count, json_parset: @parconfig.json_parset, json_parvals: @parconfig.json_parvals, learner_class: @parconfig.learner_class, learner_name: @parconfig.learner_name, learner_type: @parconfig.learner_type, upload_count: @parconfig.upload_count, user_email: @parconfig.user_email } }
     assert_redirected_to parconfig_url(@parconfig)
   end
 

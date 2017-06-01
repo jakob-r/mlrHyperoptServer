@@ -2,7 +2,7 @@ class CreateParconfigs < ActiveRecord::Migration[5.0]
   def change
     create_table :parconfigs do |t|
       t.string :user_email, :default => "<anonymous>"
-      t.text :json_parconfig
+      t.text :json_parset
       t.text :json_parvals
       t.string :learner_class
       t.string :learner_type
@@ -14,7 +14,7 @@ class CreateParconfigs < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    execute "ALTER TABLE parconfigs ADD par_hash CHAR(32) AS (MD5(concat(json_parconfig,json_parvals))) PERSISTENT;"
+    execute "ALTER TABLE parconfigs ADD par_hash CHAR(32) AS (MD5(concat(json_parset,json_parvals))) PERSISTENT;"
     execute "ALTER TABLE parconfigs ADD UNIQUE (par_hash);"
   end
 end
