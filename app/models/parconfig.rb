@@ -30,5 +30,6 @@ class Parconfig < ApplicationRecord
       return learner_type + "." + learner_name
     else
       return "." + learner_name
+    end
   end
 end
