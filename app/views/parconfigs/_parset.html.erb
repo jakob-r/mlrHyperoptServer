@@ -23,7 +23,7 @@
           <% if (param[key].kind_of? Hash) %>
             <%= param[key].values.join(', ') %>
           <% else %>
-            <% param[key].join(', ') %>
+            <%= param[key].join(', ') %>
       	  <% end %>
       	<% end %>
       	</td>

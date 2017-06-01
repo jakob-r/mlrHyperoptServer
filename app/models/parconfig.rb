@@ -15,8 +15,8 @@ class Parconfig < ApplicationRecord
     return parset
   end
 
-  def pretty_parvals
-    JSON.pretty_generate(JSON.parse(json_parvals))
+  def parvals
+    JSON.parse(json_parvals)
   end
 
   def default_parvals
