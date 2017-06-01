@@ -3,7 +3,7 @@ class Parconfig < ApplicationRecord
   validates :json_parset, :uniqueness => { :scope => :json_parvals }
 
   def anon_email
-    user_email.gsub(/(?<=@)\w*/, '*')
+    user_email.gsub(/(?<=@)[\w-]*/, '*')
   end
 
   def pretty_parset
