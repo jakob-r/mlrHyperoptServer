@@ -10,32 +10,34 @@
   </head>
 
   <body>
-  <header>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">mlrHyperopt</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="http://jakob-r.de/mlrHyperopt/articles/mlrHyperopt.html"><span class="fa fa-bolt"></span>Introduction</a></li>
-        <li><a href="http://jakob-r.de/mlrHyperopt/reference/index.html"><span class="fa fa-book"></span>Reference</a></li>
-        <li><a href="/parconfigs"><span class="fa fa-cubes"></span>ParConfigs</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/jakob-r/mlrHyperopt"><span class="fa fa-github fa-lg"></span></a></li>
-      </ul>
-    </div>
-    </div>
-    </div>
-  </header>
-    <div class="container-fluid">
+  <div class="container">
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">mlrHyperopt</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="http://jakob-r.de/mlrHyperopt/articles/mlrHyperopt.html"><span class="fa fa-bolt"></span>Introduction</a></li>
+          <li><a href="http://jakob-r.de/mlrHyperopt/reference/index.html"><span class="fa fa-book"></span>Reference</a></li>
+          <li><a href="/parconfigs"><span class="fa fa-cubes"></span>ParConfigs</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/jakob-r/mlrHyperopt"><span class="fa fa-github fa-lg"></span></a></li>
+        </ul>
+      </div>
+      </div>
+      </div>
+    </header>
+    <div class="contents">
       <%= yield %>
     </div>
+  </div>
   </body>
 </html>
