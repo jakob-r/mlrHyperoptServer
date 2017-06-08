@@ -25,7 +25,7 @@
       <ul class="nav navbar-nav">
         <li><a href="http://jakob-r.de/mlrHyperopt/articles/mlrHyperopt.html"><span class="fa fa-bolt"></span>Introduction</a></li>
         <li><a href="http://jakob-r.de/mlrHyperopt/reference/index.html"><span class="fa fa-book"></span>Reference</a></li>
-        <li><%= link_to '<span class="fa fa-cubes"></span>ParConfigs', parconfigs_path %></li>
+        <li><a href="/parconfigs"><span class="fa fa-cubes"></span>ParConfigs</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="https://github.com/jakob-r/mlrHyperopt"><span class="fa fa-github fa-lg"></span></a></li>
@@ -34,6 +34,8 @@
     </div>
     </div>
   </header>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>
