@@ -22,24 +22,23 @@ header > .navbar-default {
   background: linear-gradient(241deg, #000000, #6794a1, #6f6199, #75bb84, #000000);
   background-size: 1000% 1000%;
 
-  -webkit-animation: AnimationName 13s ease infinite;
-  -moz-animation: AnimationName 13s ease infinite;
-  animation: AnimationName 13s ease infinite;
-
-  @-webkit-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 51%}
-      100%{background-position:0% 50%}
-  }
-  @-moz-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 51%}
-      100%{background-position:0% 50%}
-  }
-  @keyframes AnimationName { 
-      0%{background-position:0% 50%}
-      50%{background-position:100% 51%}
-      100%{background-position:0% 50%}
-  }
+  -webkit-animation:  13s ease infinite;
+  -moz-animation: HeaderAni 13s ease infinite;
+  animation: HeaderAni 13s ease infinite;
 }
 
+@-webkit-keyframes HeaderAni {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes HeaderAni {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes HeaderAni { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
