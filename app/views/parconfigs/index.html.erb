@@ -27,8 +27,11 @@
         <td><%= render 'parset', parset: parconfig.parset %></td>
         <td><%= render 'parvals', parvals: parconfig.parvals %></td>
         <td><%= parconfig.default %></td>
-        <td><%= parconfig.note %></td>
-	<td><%= link_to 'Show', parconfig %><span class="disqus-comment-count" data-disqus-identifier="<%= 'pcid_'+parconfig.id.to_s %>"></span></td>
+	<td>
+	  <%= parconfig.note %>
+	  <span class="disqus-comment-count" data-disqus-identifier="<%= 'pcid_'+parconfig.id.to_s %>"></span>
+	</td>
+	<td><%= link_to 'Show', parconfig %></td>
 	<!--<td><%= link_to 'Comments', parconfig_path(parconfig, anchor: "disqus_thread"), data: {"disqus-identifier" => "pcid_"+parconfig.id.to_s } %></td>-->
         <td><%= link_to 'Edit', edit_parconfig_path(parconfig) %></td>
         <td><%= link_to 'Destroy', parconfig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
