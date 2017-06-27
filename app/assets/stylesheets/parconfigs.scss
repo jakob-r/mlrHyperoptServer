@@ -14,7 +14,10 @@ table.parset {
   >tbody>tr:nth-of-type(odd) {
     background-color: #f9f9f9;
   }
-  tbody>tr>td>.disqus-comment-count {
+}
+
+table.parconfig {
+  >tbody>tr>td>.disqus-comment-count {
     display: block;
     font-size: 0.8em;
     font-weight: bold;
