@@ -5,3 +5,4 @@ DB_USER: db_user
 DB_PASS: db_password
 PASS_SALT: 1234567
 APP_PASSWORD: admin
+SECRET_KEY_BASE: <output of "bundle exec rake secret">
